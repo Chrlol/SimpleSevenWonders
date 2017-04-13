@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SimpleSevenWonders.Models
 {
@@ -6,5 +7,6 @@ namespace SimpleSevenWonders.Models
 	{
 		public int Id { get; set; }
 		public List<PlayerPoints> PlayerPoints { get; set; }
+		public DateTime RegTime { get; set; }
 	}
 }

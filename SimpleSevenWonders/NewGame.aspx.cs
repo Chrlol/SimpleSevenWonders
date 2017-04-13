@@ -16,6 +16,12 @@ namespace SimpleSevenWonders
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			if (!IdentityHelper.IsWondersAdmin())
+			{
+				Submit.Enabled = false;
+				Submit.Text = "Not Authorized";
+				return;
+			}
 			if (!int.TryParse(Request.QueryString["NoP"], out _nrOfPlayers))
 			{
 				_nrOfPlayers = 3;
@@ -80,7 +86,8 @@ namespace SimpleSevenWonders
 				}
 				var game = new Game
 				{
-					PlayerPoints = playersPlayerPoints
+					PlayerPoints = playersPlayerPoints,
+					RegTime = DateTime.Now
 				};
 				db.Games.Add(game);
 				db.SaveChanges();

@@ -17,13 +17,6 @@ namespace SimpleSevenWonders
 		private const string AntiXsrfTokenKey = "__AntiXsrfToken";
 		private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
 		private string _antiXsrfTokenValue;
-		protected UserManager<ApplicationUser> UserManager { get; set; }
-		protected ApplicationDbContext ApplicationDbContext { get; set; }
-		public SiteMaster()
-		{
-			this.ApplicationDbContext = new ApplicationDbContext();
-			this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.ApplicationDbContext));
-		}
 
 		protected void Page_Init(object sender, EventArgs e)
 		{

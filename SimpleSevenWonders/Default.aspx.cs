@@ -13,7 +13,11 @@ namespace SimpleSevenWonders
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			if (!IdentityHelper.IsWondersAdmin())
+			{
+				CreatePlayer.Enabled = false;
+				CreatePlayer.Text = "Not Authorized";
+			}
 		}
 
 		protected void GoToGameCreationPage_Click(object sender, EventArgs e)
@@ -23,6 +27,11 @@ namespace SimpleSevenWonders
 
 		protected void CreatePlayer_Click(object sender, EventArgs e)
 		{
+			if (!IdentityHelper.IsWondersAdmin())
+			{
+				Response.Write("<p style=\"color: red;\" > Not Authorized</p>");
+				return;
+			}
 			var player = new Player { Name = PlayerName.Text };
 
 			using (var db = new ApplicationDbContext())

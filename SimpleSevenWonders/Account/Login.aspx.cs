@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity.Owin;
 using SimpleSevenWonders;
+using SimpleSevenWonders.Models;
 
 namespace SimpleSevenWonders.Account
 {
