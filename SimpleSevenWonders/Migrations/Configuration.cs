@@ -10,7 +10,6 @@ namespace SimpleSevenWonders.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "SimpleSevenWonders.Data.WondersContext";
         }
 
         protected override void Seed(SimpleSevenWonders.Data.WondersContext context)

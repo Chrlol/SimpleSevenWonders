@@ -2,7 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<h2><%: Title %></h2>
-	<asp:Label ID="TopText" runat="server" Text="Label"></asp:Label>
 	
 	<asp:Panel ID="inputBoard" runat="server"></asp:Panel>
 

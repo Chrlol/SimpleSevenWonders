@@ -3,7 +3,7 @@ namespace SimpleSevenWonders.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -12,14 +12,8 @@ namespace SimpleSevenWonders.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Player_Id = c.Int(),
-                        PlayerPoints_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Players", t => t.Player_Id)
-                .ForeignKey("dbo.PlayerPoints", t => t.PlayerPoints_Id)
-                .Index(t => t.Player_Id)
-                .Index(t => t.PlayerPoints_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.PlayerPoints",
@@ -34,10 +28,13 @@ namespace SimpleSevenWonders.Migrations
                         PurplePoints = c.Int(nullable: false),
                         GreenPoints = c.Int(nullable: false),
                         Player_Id = c.Int(),
+                        Game_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Players", t => t.Player_Id)
-                .Index(t => t.Player_Id);
+                .ForeignKey("dbo.Games", t => t.Game_Id)
+                .Index(t => t.Player_Id)
+                .Index(t => t.Game_Id);
             
             CreateTable(
                 "dbo.Players",
@@ -52,12 +49,10 @@ namespace SimpleSevenWonders.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Games", "PlayerPoints_Id", "dbo.PlayerPoints");
+            DropForeignKey("dbo.PlayerPoints", "Game_Id", "dbo.Games");
             DropForeignKey("dbo.PlayerPoints", "Player_Id", "dbo.Players");
-            DropForeignKey("dbo.Games", "Player_Id", "dbo.Players");
+            DropIndex("dbo.PlayerPoints", new[] { "Game_Id" });
             DropIndex("dbo.PlayerPoints", new[] { "Player_Id" });
-            DropIndex("dbo.Games", new[] { "PlayerPoints_Id" });
-            DropIndex("dbo.Games", new[] { "Player_Id" });
             DropTable("dbo.Players");
             DropTable("dbo.PlayerPoints");
             DropTable("dbo.Games");

@@ -13,15 +13,6 @@ namespace SimpleSevenWonders {
     public partial class NewGame {
         
         /// <summary>
-        /// TopText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TopText;
-        
-        /// <summary>
         /// inputBoard control.
         /// </summary>
         /// <remarks>
