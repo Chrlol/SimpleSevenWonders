@@ -5,14 +5,15 @@ namespace SimpleSevenWonders.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SimpleSevenWonders.Data.WondersContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SimpleSevenWonders.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "SimpleSevenWonders.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(SimpleSevenWonders.Data.WondersContext context)
+        protected override void Seed(SimpleSevenWonders.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

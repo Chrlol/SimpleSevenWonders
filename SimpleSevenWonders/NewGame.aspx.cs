@@ -37,7 +37,7 @@ namespace SimpleSevenWonders
 			{
 				var players = new DropDownList { CssClass = "PointBox", ID = $"player_{i}"};
 
-				using (var db = new WondersContext())
+				using (var db = new ApplicationDbContext())
 				{
 					foreach (var dbPlayer in db.Players)
 					{
@@ -59,7 +59,7 @@ namespace SimpleSevenWonders
 
 		protected void Submit_Click(object sender, EventArgs e)
 		{
-			using (var db = new WondersContext())
+			using (var db = new ApplicationDbContext())
 			{
 				var playersPlayerPoints = new List<PlayerPoints>();
 				for (var i = 0; i < _nrOfPlayers; i++)
@@ -96,7 +96,7 @@ namespace SimpleSevenWonders
 			throw new Exception($"GetPoints: {prefix}{i}, Control not found");
 		}
 
-		private Player GetPlayer(int i, WondersContext db)
+		private Player GetPlayer(int i, ApplicationDbContext db)
 		{
 			var dropDownList = inputBoard.FindControl($"player_{i}") as DropDownList;
 			if (dropDownList == null)

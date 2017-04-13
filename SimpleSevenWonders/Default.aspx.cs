@@ -25,7 +25,7 @@ namespace SimpleSevenWonders
 		{
 			var player = new Player { Name = PlayerName.Text };
 
-			using (var db = new WondersContext())
+			using (var db = new ApplicationDbContext())
 			{
 				db.Players.Add(player);
 				db.SaveChanges();

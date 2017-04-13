@@ -32,7 +32,7 @@
 					<asp:BoundField DataField="Name" HeaderText="Name" ReadOnly="True" SortExpression="Name" />
 				</Columns>
 			</asp:GridView>
-        	<asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="SimpleSevenWonders.Data.WondersContext" EntityTypeName="" Select="new (Id, Name)" TableName="Players">
+        	<asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="SimpleSevenWonders.Models.ApplicationDbContext" EntityTypeName="" Select="new (Id, Name)" TableName="Players">
 			</asp:LinqDataSource>
 			<asp:EntityDataSource ID="EntityDataSource1" runat="server">
 			</asp:EntityDataSource>

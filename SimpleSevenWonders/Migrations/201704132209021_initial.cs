@@ -45,6 +45,7 @@ namespace SimpleSevenWonders.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
+            AddColumn("dbo.AspNetUsers", "WondersAdmin", c => c.Boolean(nullable: false));
         }
         
         public override void Down()
@@ -53,6 +54,7 @@ namespace SimpleSevenWonders.Migrations
             DropForeignKey("dbo.PlayerPoints", "Player_Id", "dbo.Players");
             DropIndex("dbo.PlayerPoints", new[] { "Game_Id" });
             DropIndex("dbo.PlayerPoints", new[] { "Player_Id" });
+            DropColumn("dbo.AspNetUsers", "WondersAdmin");
             DropTable("dbo.Players");
             DropTable("dbo.PlayerPoints");
             DropTable("dbo.Games");
