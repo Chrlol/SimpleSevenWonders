@@ -53,7 +53,7 @@ namespace SimpleSevenWonders
 
 		protected void Submit_Click(object sender, EventArgs e)
 		{
-			TopText.Text = ((TextBox)inputBoard.FindControl("Wonder_2")).Text;
+
 		}
 	}
 }
