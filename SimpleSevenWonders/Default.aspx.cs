@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace SimpleSevenWonders
 {
-	public partial class _Default : Page
+	public partial class Default : Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
+		}
+
+		protected void GoToGameCreationPage_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("NewGame.aspx?NoP=" + NrOfPlayers.SelectedItem.Value);
 		}
 	}
 }

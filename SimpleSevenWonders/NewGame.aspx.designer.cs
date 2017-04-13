@@ -10,24 +10,33 @@
 namespace SimpleSevenWonders {
     
     
-    public partial class Default {
+    public partial class NewGame {
         
         /// <summary>
-        /// NrOfPlayers control.
+        /// TopText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList NrOfPlayers;
+        protected global::System.Web.UI.WebControls.Label TopText;
         
         /// <summary>
-        /// GoToGameCreationPage control.
+        /// inputBoard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GoToGameCreationPage;
+        protected global::System.Web.UI.WebControls.Panel inputBoard;
+        
+        /// <summary>
+        /// Submit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Submit;
     }
 }
