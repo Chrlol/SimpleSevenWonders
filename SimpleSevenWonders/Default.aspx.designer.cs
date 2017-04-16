@@ -67,12 +67,12 @@ namespace SimpleSevenWonders {
         protected global::System.Web.UI.WebControls.LinqDataSource LinqDataSource1;
         
         /// <summary>
-        /// EntityDataSource1 control.
+        /// Games control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSource1;
+        protected global::System.Web.UI.WebControls.GridView Games;
     }
 }

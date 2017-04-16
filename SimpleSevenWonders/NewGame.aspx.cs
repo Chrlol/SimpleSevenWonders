@@ -11,8 +11,6 @@ namespace SimpleSevenWonders
 	public partial class NewGame : System.Web.UI.Page
 	{
 		private int _nrOfPlayers;
-		private List<string> _players = new List<string> { "William", "Ferdinand", "Frederik" };
-		private const int UnitWidth = 100;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{

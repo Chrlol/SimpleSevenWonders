@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -36,6 +38,7 @@ namespace SimpleSevenWonders.Models
 		public DbSet<Game> Games { get; set; }
 		public DbSet<Player> Players { get; set; }
 		public DbSet<PlayerPoints> PlayerPointses { get; set; }
+
 		public static ApplicationDbContext Create()
 		{
 			return new ApplicationDbContext();

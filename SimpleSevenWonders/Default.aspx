@@ -34,8 +34,11 @@
 			</asp:GridView>
         	<asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="SimpleSevenWonders.Models.ApplicationDbContext" EntityTypeName="" Select="new (Id, Name)" TableName="Players">
 			</asp:LinqDataSource>
-			<asp:EntityDataSource ID="EntityDataSource1" runat="server">
-			</asp:EntityDataSource>
+        </div>
+		
+		<div class="col-md-4">
+            <h2>Games</h2>
+			<asp:GridView ID="Games" runat="server"></asp:GridView>
         </div>
     </div>
 
